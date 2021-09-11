@@ -23,7 +23,7 @@ def create_sea(board):
 This function adds ship to a random place in the list which will then be
 printed by create_sea func.
 """
-def create_ships(board):
+def create_ships(board, num_ships):
     for ships in range(num_ships):
         ship_row = random.randint(0, size)
         ship_column = random.randint(0, size)
@@ -64,11 +64,12 @@ def count_hits(board):
 
 unseen_board = [["^" for x in range(5)]for y in range(5)]
 guess_board = [["^" for x in range(5)]for y in range(5)]
-create_ships(unseen_board)
+create_ships(unseen_board, num_ships)
 turns = 10
+num_ships = 4
 
 
-def main():
+def main(turns):
     """
     This function runs the game and prints out the result
     after each guess aswell as end result if turns go to
@@ -90,3 +91,6 @@ def main():
         if count_hits(guess_board) == num_ships:
             print('You have WON! GG!')
     print('Sorry. Your crew is sleeping with fish!')
+
+
+main(turns) = 10
