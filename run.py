@@ -1,5 +1,6 @@
 import random
 
+
 # If player miss I will show an "-"
 # If player hit I will show an "X"
 # For water I will show "^"
@@ -19,14 +20,16 @@ def create_sea(board):
 
 
 """
-This function adds ship to a random place in the list which will then be printed
-by create_sea func.
+This function adds ship to a random place in the list which will then be
+printed by create_sea func.
 """
 def create_ships(board):
     for ships in range(num_ships):
-        boat_row, boat_column = random.randint(0, size), random.randint(0, size)
+        boat_row = random.randint(0, size)
+        boat_column = random.randint(0, size)
         while board[boat_row][boat_column] == 'X'
-            boat_row, boat_column = random.randint(0, size), random.randint(0, size)
+            boat_row = random.randint(0, size)
+            boat_column = random.randint(0, size)
         board[boat_row][boat_column] = 'X'
 
 
@@ -46,3 +49,14 @@ def get_ship_location():
         column = input('Choose a column from 1 to 5')
 
 
+def count_hits(board):
+    """
+    This function looks for any ship that has been hit
+    and then returns the value to our counter.
+    """
+    count = 0
+    for row in board:
+        for column in row:
+            if board[row][column] == 'X':
+                count += 1
+    return count
