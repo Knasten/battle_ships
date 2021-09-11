@@ -30,11 +30,11 @@ def create_ships(board, num_ships, size):
     printed by create_sea func.
     """
     for ships in range(num_ships):
-        ship_row = random.randint(0, size)
-        ship_column = random.randint(0, size)
+        ship_row = random.randint(0, size - 1)
+        ship_column = random.randint(0, size - 1)
         while board[ship_row][ship_column] == 'X':
-            ship_row = random.randint(0, size)
-            ship_column = random.randint(0, size)
+            ship_row = random.randint(0, size - 1)
+            ship_column = random.randint(0, size - 1)
         board[ship_row][ship_column] = 'X'
 
 
@@ -52,7 +52,7 @@ def get_ship_location():
     while column not in "12345":
         print('Your number is not valid please try again!')
         column = input('Choose a column from 1 to 5')
-    return int(row), int(column)
+    return int(row) - 1, int(column) - 1
 
 
 def count_hits(board):
@@ -63,17 +63,17 @@ def count_hits(board):
     count = 0
     for row in board:
         for column in row:
-            if board[row][column] == 'X':
+            if column == 'X':
                 count += 1
     return count
 
 
-unseen_board = [["^" for x in range(5)]for y in range(5)]
-guess_board = [["^" for x in range(5)]for y in range(5)]
+unseen_board = [["^" for x in range(size)]for y in range(size)]
+guess_board = [["^" for x in range(size)]for y in range(size)]
 create_ships(unseen_board, num_ships, size)
 
 
-def main(turns):
+def main(turns, num_ships):
     """
     This function runs the game and prints out the result
     after each guess aswell as end result if turns go to
@@ -86,7 +86,9 @@ def main(turns):
         if guess_board[row][column] == 'X' or guess_board[row][column] == '-':
             print('You have already blown up theese coordinates!')
         elif unseen_board[row][column] == 'X':
+            guess_board[row][column] = 'X'
             print('HIT! You sank a ship!')
+            print(f'You have {turns} left before the enemy fleet sinks you!')
         else:
             print('MISS! Try again!')
             guess_board[row][column] = '-'
@@ -97,4 +99,4 @@ def main(turns):
     print('Sorry. Your crew is sleeping with fish!')
 
 
-main(turns)
+main(turns, num_ships)
