@@ -69,6 +69,11 @@ turns = 10
 
 
 def main():
+    """
+    This function runs the game and prints out the result
+    after each guess aswell as end result if turns go to
+    zero or if count hit is the same as number of ships.
+    """
     while turns > 0:
         print('Get ready! Set! Go! Battleships is starting!')
         create_sea(guess_board)
