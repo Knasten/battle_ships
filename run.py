@@ -25,12 +25,12 @@ printed by create_sea func.
 """
 def create_ships(board):
     for ships in range(num_ships):
-        boat_row = random.randint(0, size)
-        boat_column = random.randint(0, size)
+        ship_row = random.randint(0, size)
+        ship_column = random.randint(0, size)
         while board[boat_row][boat_column] == 'X'
-            boat_row = random.randint(0, size)
-            boat_column = random.randint(0, size)
-        board[boat_row][boat_column] = 'X'
+            ship_row = random.randint(0, size)
+            ship_column = random.randint(0, size)
+        board[ship_row][ship_column] = 'X'
 
 
 def get_ship_location():
@@ -60,3 +60,28 @@ def count_hits(board):
             if board[row][column] == 'X':
                 count += 1
     return count
+
+
+unseen_board = [["^" for x in range(5)]for y in range(5)]
+guess_board = [["^" for x in range(5)]for y in range(5)]
+create_ships(unseen_board)
+turns = 10
+
+
+def main():
+    while turns > 0:
+        print('Get ready! Set! Go! Battleships is starting!')
+        create_sea(guess_board)
+        row, column = get_ship_location()
+        if guess_board[row][column] == 'X' or guess_board[row][column] == '-':
+            print('You have already blown up theese coordinates!')
+        elif unseen_board[row][column] == 'X':
+            print('HIT! You sank a ship!')
+        else:
+            print('MISS! Try again!')
+            guess_board[row][column] = '-'
+            turns -= 1
+            print(f'You have {turns} left before the enemy fleet sinks you!')
+        if count_hits(guess_board) == num_ships:
+            print('You have WON! GG!')
+    print('Sorry. Your crew is sleeping with fish!')
