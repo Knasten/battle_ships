@@ -52,6 +52,7 @@ def get_ship_location():
     while column not in "12345":
         print('Your number is not valid please try again!')
         column = input('Choose a column from 1 to 5')
+    return int(row), int(column)
 
 
 def count_hits(board):
