@@ -45,11 +45,11 @@ def get_ship_location():
     and ask for a new number til the user enters a valid.
     """
     row = input('Choose a row from 1 to 5')
-    while row not in "12345":
+    while row not in "12345" or row == "":
         print('Your number is not valid please try again!')
         row = input('Choose a row from 1 to 5')
     column = input('Choose a column from 1 to 5')
-    while column not in "12345":
+    while column not in "12345" or row == "":
         print('Your number is not valid please try again!')
         column = input('Choose a column from 1 to 5')
     return int(row) - 1, int(column) - 1
