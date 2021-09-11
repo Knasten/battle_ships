@@ -18,6 +18,18 @@ def create_sea(board):
         row_number += 1
 
 
+"""
+This function adds ship to a random place in the list which will then be printed
+by create_sea func.
+"""
+def create_ships(board):
+    for ships in range(num_ships):
+        boat_row, boat_column = random.randint(0, size), random.randint(0, size)
+        while board[boat_row][boat_column] == 'X'
+            boat_row, boat_column = random.randint(0, size), random.randint(0, size)
+        board[boat_row][boat_column] = 'X'
+
+
 def get_ship_location():
     """
     This function asks the user to enter a row and column.
@@ -32,3 +44,5 @@ def get_ship_location():
     while column not in "12345":
         print('Your number is not valid please try again!')
         column = input('Choose a column from 1 to 5')
+
+
