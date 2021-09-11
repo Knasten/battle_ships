@@ -1,6 +1,11 @@
 import random
 
 
+turns = 10
+num_ships = 4
+size = 5
+
+
 # If player miss I will show an "-"
 # If player hit I will show an "X"
 # For water I will show "^"
@@ -15,19 +20,19 @@ def create_sea(board):
     print('  -----------')
     row_number = 1
     for row in board:
-        print("%d |%s|" % (row_number, "|".join(row))
+        print("%d |%s|" % (row_number, "|".join(row)))
         row_number += 1
 
 
-"""
-This function adds ship to a random place in the list which will then be
-printed by create_sea func.
-"""
-def create_ships(board, num_ships):
+def create_ships(board, num_ships, size):
+    """
+    This function adds ship to a random place in the list which will then be
+    printed by create_sea func.
+    """
     for ships in range(num_ships):
         ship_row = random.randint(0, size)
         ship_column = random.randint(0, size)
-        while board[boat_row][boat_column] == 'X'
+        while board[ship_row][ship_column] == 'X':
             ship_row = random.randint(0, size)
             ship_column = random.randint(0, size)
         board[ship_row][ship_column] = 'X'
@@ -64,9 +69,7 @@ def count_hits(board):
 
 unseen_board = [["^" for x in range(5)]for y in range(5)]
 guess_board = [["^" for x in range(5)]for y in range(5)]
-create_ships(unseen_board, num_ships)
-turns = 10
-num_ships = 4
+create_ships(unseen_board, num_ships, size)
 
 
 def main(turns):
@@ -93,4 +96,4 @@ def main(turns):
     print('Sorry. Your crew is sleeping with fish!')
 
 
-main(turns) = 10
+main(turns)
