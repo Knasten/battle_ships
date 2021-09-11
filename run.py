@@ -71,7 +71,6 @@ def count_hits(board):
 
 unseen_board = [["^" for x in range(size)]for y in range(size)]
 guess_board = [["^" for x in range(size)]for y in range(size)]
-create_ships(unseen_board, num_ships, size)
 
 
 def main(turns, num_ships):
@@ -100,10 +99,12 @@ def main(turns, num_ships):
     print('Sorry. Your crew is sleeping with fish!')
 
 
-def start_game(turns, num_ships):
+def start_game(turns, num_ships, size):
     turns = int(input('Select how many turns you want: '))
-    num_ship = int(input('Select how many ships you want: '))
+    num_ships = int(input('Select how many ships you want: '))
+    size = int(input('Select how big board you want: '))
+    create_ships(unseen_board, num_ships, size)
     main(turns, num_ships)
 
 
-start_game(turns, num_ships)
+start_game(turns, num_ships, size)
