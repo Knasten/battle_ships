@@ -54,6 +54,8 @@
     * Counter did not work properly at first.
         * This was because of a return statement being indented too far.
     * Gitpod is complaining over unused variable on line 35,9 "ships" unused, however this does not create any problems.
+    * Forgot to accept values to 8 after changing board size from 5x5 to 8x8
+        * To solve this and make sure it isn't a problem in the future, I added a list called admitted_input which is made using "[str(x) for x in range(size + 1)]"
 
 # Tools
 * GitHub and GitPod was used to write and save the code.
