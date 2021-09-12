@@ -19,8 +19,8 @@ def create_sea(board):
     This function prints the board for the user to see.
     Aswell as printing out numbers for each row and column.
     """
-    print('   1 2 3 4 5')
-    print('  -----------')
+    print('   1 2 3 4 5 6 7 8')
+    print('  ----------------')
     row_number = 1
     for row in board:
         print("%d |%s|" % (row_number, "|".join(row)))
