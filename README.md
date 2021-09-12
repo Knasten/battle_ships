@@ -32,7 +32,7 @@
     * Ships are randomly placed by computer to board.
     * Accepts user inputs for where to shoot.
         * If not in a valid scope it will print something in the lines of "try again".
-        * [picture of non-valid input](./assets/images/readme_images/non_valid.png)
+        * ![picture of non-valid input](./assets/images/readme_images/non_valid.png)
 
 * Future Features
     * In the future I want to add class code to the game.
@@ -44,7 +44,7 @@
     * For instance i have tried inputting invalid data to make sure my functions do not break down.
     ## Validation
     * Tested on an online pep8 tester.
-    * [picture of pep8 validation](./assets/images/readme_images/pep.jpg)
+    * ![picture of pep8 validation](./assets/images/readme_images/pep.jpg)
 
 # Bugs
 * During the work on this project I had alot of bugs.
