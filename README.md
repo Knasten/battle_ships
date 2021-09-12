@@ -53,8 +53,7 @@
         * I also had to add a check for empty strings to make sure nothing can go wrong.
     * Counter did not work properly at first.
         * This was because of a return statement being indented too far.
-
-* No found bugs left unfixed.
+    * Gitpod is complaining over unused variable on line 35,9 "ships" unused, however this does not create any problems.
 
 # Tools
 * GitHub and GitPod was used to write and save the code.
