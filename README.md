@@ -1,10 +1,10 @@
-# Responsivness
+# Shooting Ships
 
-![picture of game]()
+![picture of game](./assets/images/readme_images/start.png)
 
-# Shoot Them!
+# Link To Game
 
-<a href="" target="_blank" rel="noopener">Link To Game</a>      ADDA LÄNK
+<a href="https://shooting-ships.herokuapp.com/" target="_blank" rel="noopener">Link To Game</a>
 
 # Content
 
@@ -19,7 +19,7 @@
 
 # Presentation
 * This is a battleships game made to run in Heroku terminal. Further down you will find a how to play explaning the game.
-* ![picture of terminal]()
+* ![picture of terminal](./assets/images/readme_images/terminal.png)
 
 # Features
 * You will have to hit all ships before your turns reach 0.
@@ -29,9 +29,10 @@
 * Features currently in-game:
     * Counter for ships hit if you hit all ships on enemy board you win.
     * Counter for turns, so if you havent sunk all ships within a set range of turns you lose.
-    * Ships are randomly places by computer to board.
+    * Ships are randomly placed by computer to board.
     * Accepts user inputs for where to shoot.
         * If not in a valid scope it will print something in the lines of "try again".
+        * [picture of non-valid input](./assets/images/readme_images/non_valid.png)
 
 * Future Features
     * In the future I want to add class code to the game.
@@ -42,7 +43,8 @@
 * I have tested this game in the CodeInstitutes heroku terminal and in Gitpod terminal.
     * For instance i have tried inputting invalid data to make sure my functions do not break down.
     ## Validation
-    * Tested on an online pep8 tester. [picture of pep8 validation]()
+    * Tested on an online pep8 tester.
+    * [picture of pep8 validation](./assets/images/readme_images/pep.jpg)
 
 # Bugs
 * During the work on this project I had alot of bugs.
