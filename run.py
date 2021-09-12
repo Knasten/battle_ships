@@ -45,14 +45,14 @@ def get_ship_location():
     If row and column returned from user is not valid it will print this,
     and ask for a new number til the user enters a valid.
     """
-    row = input('Choose a row from 1 to 5: ')
+    row = input('Choose a row from 1 to 5: \n')
     while row not in admitted_input or row == "":
         print('Your number is not valid please try again!')
-        row = input('Choose a row from 1 to 5: ')
-    column = input('Choose a column from 1 to 5: ')
+        row = input('Choose a row from 1 to 5: \n')
+    column = input('Choose a column from 1 to 5: \n')
     while column not in admitted_input or column == "":
         print('Your number is not valid please try again!')
-        column = input('Choose a column from 1 to 5: ')
+        column = input('Choose a column from 1 to 5: \n')
     return int(row) - 1, int(column) - 1
 
 
@@ -108,8 +108,8 @@ def main(turns, num_ships):
 
 
 def start_game(turns, num_ships):
-    turns = int(input('Select how many turns you want: '))
-    num_ships = int(input('Select how many ships you want: '))
+    turns = int(input('Select how many turns you want: \n'))
+    num_ships = int(input('Select how many ships you want: \n'))
     print('Get ready! Set! Go! Battleships is starting!')
     create_ships(unseen_board, num_ships)
     main(turns, num_ships)
