@@ -1,17 +1,17 @@
 import random
 
+# If player miss I will show an "-"
+# If player hit I will show an "X"
+# For water I will show "^"
+
 # Variables turns and num_ship declared here and later changed by user.
 # Size declared for board size here so grid 5x5
 # admitted_input is used to verify row and column input from user
 turns = 32
 num_ships = 7
 size = 8
-admitted_input = ['1', '2', '3', '4', '5']
-
-
-# If player miss I will show an "-"
-# If player hit I will show an "X"
-# For water I will show "^"
+admitted_input = [str(x) for x in range(size + 1)]
+nl = '\n'
 
 
 def create_sea(board):
@@ -47,14 +47,14 @@ def get_ship_location():
     If row and column returned from user is not valid it will print this,
     and ask for a new number til the user enters a valid.
     """
-    row = input('Choose a row from 1 to 5: \n')
+    row = input(f'Choose a row from 1 to {size}: {nl}')
     while row not in admitted_input or row == "":
         print('Your number is not valid please try again!')
-        row = input('Choose a row from 1 to 5: \n')
-    column = input('Choose a column from 1 to 5: \n')
+        row = input(f'Choose a row from 1 to {size}: {nl}')
+    column = input(f'Choose a column from 1 to {size}: {nl}')
     while column not in admitted_input or column == "":
         print('Your number is not valid please try again!')
-        column = input('Choose a column from 1 to 5: \n')
+        column = input(f'Choose a column from 1 to {size}: {nl}')
     return int(row) - 1, int(column) - 1
 
 
@@ -109,6 +109,8 @@ def main(turns, num_ships):
             break
         elif turns == 0:
             print('Sorry. Your crew is sleeping with the fish!')
+            print('In theese location you could of hit the ships.')
+            create_sea(unseen_board)
             break
 
 
