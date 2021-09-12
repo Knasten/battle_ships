@@ -1,6 +1,8 @@
 import random
 
-
+# Variables turns and num_ship declared here and later changed by user.
+# Size declared for board size here so grid 5x5
+# admitted_input is used to verify row and column input from user
 turns = 10
 num_ships = 4
 size = 5
@@ -68,6 +70,9 @@ def count_hits(board):
                 count += 1
     return count
 
+# unseen_board and guess_board will be the same size
+# unseen_board used to verify hits and guess_board to show outcome.
+
 
 unseen_board = [["^" for x in range(size)]for y in range(size)]
 guess_board = [["^" for x in range(size)]for y in range(size)]
@@ -108,6 +113,10 @@ def main(turns, num_ships):
 
 
 def start_game(turns, num_ships):
+    """
+    This function takes the parameters turns and num_ship
+    and then the user changes this value by input method
+    """
     turns = int(input('Select how many turns you want: \n'))
     num_ships = int(input('Select how many ships you want: \n'))
     print('Get ready! Set! Go! Battleships is starting!')
