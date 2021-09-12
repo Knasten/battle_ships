@@ -21,9 +21,10 @@
 * This is a battleships game made to run in Heroku terminal. Further down you will find a how to play explaning the game.
 * ![picture of terminal](./assets/images/readme_images/terminal.png)
 
-# Features
-* You will have to hit all ships before your turns reach 0.
-* There will be 7 ships on a 8x8 grid (64 spaces.), and you will have 32 turns to hit all ship.
+# How to play!
+* For each round, you will have to choose a row and a column. If a ship is present on thoose coordinates you will not lose a life.
+* You got 32 lifes before losing the game. And for each game there will be 7 ships on the board.
+* After the game ends you will be able to see where the ships were put.
 
 # Features
 * Features currently in-game:
