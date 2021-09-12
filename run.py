@@ -25,7 +25,7 @@ def create_sea(board):
         row_number += 1
 
 
-def create_ships(board, num_ships, size):
+def create_ships(board, num_ships):
     """
     This function adds ship to a random place in the list which will then be
     printed by create_sea func.
@@ -50,7 +50,7 @@ def get_ship_location():
         print('Your number is not valid please try again!')
         row = input('Choose a row from 1 to 5: ')
     column = input('Choose a column from 1 to 5: ')
-    while column not in admitted_input or row == "":
+    while column not in admitted_input or column == "":
         print('Your number is not valid please try again!')
         column = input('Choose a column from 1 to 5: ')
     return int(row) - 1, int(column) - 1
@@ -79,32 +79,40 @@ def main(turns, num_ships):
     after each guess aswell as end result if turns go to
     zero or if count hit is the same as number of ships.
     """
+    round = 0
     while turns > 0:
-        print('Get ready! Set! Go! Battleships is starting!')
+        print(f'Round {round}')
         create_sea(guess_board)
         row, column = get_ship_location()
         if guess_board[row][column] == 'X' or guess_board[row][column] == '-':
             print('You have already blown up theese coordinates!')
         elif unseen_board[row][column] == 'X':
             guess_board[row][column] = 'X'
+            round += 1
             print('HIT! You sank a ship!')
             print(f'You have {turns} left before the enemy fleet sinks you!')
         else:
             print('MISS! Try again!')
             guess_board[row][column] = '-'
+            round += 1
             turns -= 1
-            print(f'You have {turns} left before the enemy fleet sinks you!')
+            print(f'You have {turns} turns left')
+            print('Before the enemy fleet sinks you!')
         if count_hits(guess_board) == num_ships:
-            print('You have WON! GG!')
-    print('Sorry. Your crew is sleeping with fish!')
+            print('You have WON!')
+            print(f'It took you {round} rounds to sink {num_ships} ships')
+            break
+        elif turns == 0:
+            print('Sorry. Your crew is sleeping with fish!')
+            break
 
 
-def start_game(turns, num_ships, size):
+def start_game(turns, num_ships):
     turns = int(input('Select how many turns you want: '))
     num_ships = int(input('Select how many ships you want: '))
-    size = int(input('Select how big board you want: '))
-    create_ships(unseen_board, num_ships, size)
+    print('Get ready! Set! Go! Battleships is starting!')
+    create_ships(unseen_board, num_ships)
     main(turns, num_ships)
 
 
-start_game(turns, num_ships, size)
+start_game(turns, num_ships)
