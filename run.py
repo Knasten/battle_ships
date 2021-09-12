@@ -3,9 +3,9 @@ import random
 # Variables turns and num_ship declared here and later changed by user.
 # Size declared for board size here so grid 5x5
 # admitted_input is used to verify row and column input from user
-turns = 10
-num_ships = 4
-size = 5
+turns = 32
+num_ships = 7
+size = 8
 admitted_input = ['1', '2', '3', '4', '5']
 
 
