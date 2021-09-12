@@ -108,20 +108,17 @@ def main(turns, num_ships):
             print(f'It took you {round} rounds to sink {num_ships} ships')
             break
         elif turns == 0:
-            print('Sorry. Your crew is sleeping with fish!')
+            print('Sorry. Your crew is sleeping with the fish!')
             break
 
 
-def start_game(turns, num_ships):
+def start_game():
     """
-    This function takes the parameters turns and num_ship
-    and then the user changes this value by input method
+    This function starts the game!
     """
-    turns = int(input('Select how many turns you want: \n'))
-    num_ships = int(input('Select how many ships you want: \n'))
     print('Get ready! Set! Go! Battleships is starting!')
     create_ships(unseen_board, num_ships)
     main(turns, num_ships)
 
 
-start_game(turns, num_ships)
+start_game()
